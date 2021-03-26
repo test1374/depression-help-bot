@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color:rgb(34,139,34);
+  background-color:rgb(51, 51, 51);
 }
 canvas {
   display: block;
@@ -11,6 +11,10 @@ canvas {
   width: 40%;
 }
 h1{
+  color:rgb(0);
+  font-family:sans-serif;
+}
+h4{
   color:rgb(0);
   font-family:sans-serif;
 }
