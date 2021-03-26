@@ -1,0 +1,53 @@
+var messages = ["𝗕𝗢𝗧 - Hello!"];
+var input = "";
+keyPressed = function() {
+    if(keyCode === BACKSPACE || keyCode === DELETE) {
+        input = input.slice(0,-1);
+    } else if(keyCode < 16 && keyCode !== ENTER || keyCode > 18 && keyCode !== ENTER && keyCode < 33 && keyCode !== ENTER || keyCode > 47 && keyCode !== ENTER) { 
+    input = input + key.toString();
+    }
+    if(keyCode === ENTER && input !== "") {
+        messages.push("𝗬𝗢𝗨 - " + input);
+        input = "";
+    }
+};
+var talk = function(question, responce) {
+    if(messages[messages.length - 1].toLowerCase() === "𝗬𝗢𝗨 - " + question.toLowerCase()) {
+        messages.push("𝗕𝗢𝗧 - " + responce);
+    }
+};
+function setup() {
+  createCanvas(700, 400);
+}
+draw = function() {
+    talk("hi", "whats your name?");
+    talk("hello", "whats your name?");
+    talk("i feel sad", "If you feel sad, try listening to happy music");
+    talk("i feel depressed", "If you feel depressed, the worst thing you can do is to not let anybody know about it. Tell someone or try to get a therapist.");
+    talk("i want to hurt myself", "If you feel like harming yourself, don't. It's bad and can turn into a habit. Instead of hurting yourself, try listening to music or cooking.");
+    talk("i want to cut myself", "If you feel like cutting yourself, instead draw butterflies on your arm. If they fade, draw them again. If you cut yourself\nyou kill the butterflies.");
+    talk("i feel better", "I'm happy that you feel that way. If you get sad or depressedagain, remember what I've said.");
+    talk("nobody loves me", "You are beatiful and you are loved.");
+    talk("im lonely", "You are never truly alone. There is always someone there for you.");
+    talk("im alone", "You are never truly alone. There is always someone there for you.");
+    talk("im worthless", "You are priceless.");
+    talk("nice", "Thanks! :D");
+    talk("thx", "No problem :)");
+    talk("thanks", "No problem :)");
+    background(51, 51, 51);
+    textAlign(LEFT, CENTER);
+    for(var i = messages.length; i > 0; i--) {
+        fill(255, 255, 255);
+        text(messages[i - 1], 5, 320 - (i - messages.length) * -40, 690, 50);
+    }
+    if(input === "Tab" || input === "CapsLock" || input === "Meta") {
+      input = "";
+    }
+    if(messages.length > 13) {
+        messages.splice(0, 1);
+    }
+    fill(112, 112, 112);
+    rect(5, 370, 690, 25, 3);
+    fill(255, 255, 255);
+    text(input + "_", 10, 372, 680, 20);
+};
