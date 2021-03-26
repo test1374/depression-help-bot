@@ -20,6 +20,7 @@ function setup() {
   createCanvas(700, 400);
 }
 draw = function() {
+    talk("i want to kill myself", "i want to die", "If you experience suicidal thoughts, please call this number for help \n833-456-4566");
     talk("im sad", "", "Don't be. Listen to happy music.");
     talk("hi", "", "whats your name?");
     talk("hello", "", "whats your name?");
