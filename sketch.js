@@ -11,8 +11,8 @@ keyPressed = function() {
         input = "";
     }
 };
-var talk = function(question, responce) {
-    if(messages[messages.length - 1].toLowerCase() === "𝗬𝗢𝗨 - " + question.toLowerCase()) {
+var talk = function(question1, question2, responce) {
+    if(messages[messages.length - 1].toLowerCase() === "𝗬𝗢𝗨 - " + question1.toLowerCase() || messages[messages.length - 1].toLowerCase() === "𝗬𝗢𝗨 - " + question2.toLowerCase()) {
         messages.push("𝗕𝗢𝗧 - " + responce);
     }
 };
@@ -20,16 +20,17 @@ function setup() {
   createCanvas(700, 400);
 }
 draw = function() {
-    talk("hi", "whats your name?");
-    talk("hello", "whats your name?");
-    talk("i feel sad", "If you feel sad, try listening to happy music");
-    talk("i feel depressed", "If you feel depressed, the worst thing you can do is to not let anybody know about it. Tell someone or try to get a therapist.");
-    talk("i want to hurt myself", "If you feel like harming yourself, don't. It's bad and can turn into a habit. Instead of hurting yourself, try listening to music or cooking.");
-    talk("i want to cut myself", "If you feel like cutting yourself, instead draw butterflies on your arm. If they fade, draw them again. If you cut yourself\nyou kill the butterflies.");
-    talk("i feel better", "I'm happy that you feel that way. If you get sad or depressedagain, remember what I've said.");
-    talk("nobody loves me", "You are beatiful and you are loved.");
-    talk("im lonely", "You are never truly alone. There is always someone there for you.");
-    talk("im alone", "You are never truly alone. There is always someone there for you.");
+    talk("im sad", "", "Don't be. Listen to happy music.");
+    talk("hi", "", "whats your name?");
+    talk("hello", "", "whats your name?");
+    talk("i feel sad", "im sad", "If you feel sad, try listening to happy music");
+    talk("i hate myself", "i dont like who i am","You are beautiful and unique. You can be whoever you want to be.");
+    talk("i feel depressed", "im depressed","If you feel depressed, the worst thing you can do is to not let anybody know about it. Tell someone or try to get a therapist.");
+    talk("i want to hurt myself", "should i hurt myself?","If you feel like harming yourself, don't. It's bad and can turn into a habit. Instead of hurting yourself, try listening to music or cooking.");
+    talk("i want to cut myself", "should i cut myself?","If you feel like cutting yourself, instead draw butterflies on your arm. If they fade, draw them again. If you cut yourself\nyou kill the butterflies.");
+    talk("i feel better", "i feel good","I'm happy that you feel that way. If you get sad or depressedagain, remember what I've said.");
+    talk("nobody loves me", "everyone hates me","You are beatiful and you are loved.");
+    talk("im lonely", "im alone","You are never truly alone. There is always someone there for you.");
     talk("im worthless", "You are priceless.");
     talk("nice", "Thanks! :D");
     talk("thx", "No problem :)");
@@ -51,3 +52,4 @@ draw = function() {
     fill(255, 255, 255);
     text(input + "_", 10, 372, 680, 20);
 };
+
