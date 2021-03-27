@@ -48,9 +48,6 @@ draw = function() {
     if(messages.length > 13) {
         messages.splice(0, 1);
     }
-    if(mouseX >= 5 && mouseX <= 695 && mouseY >= 370 && mouseY <= 395 && mouseIsPressed) {
-        prompt();
-    }
     fill(112, 112, 112);
     rect(5, 370, 690, 25, 3);
     fill(255, 255, 255);
